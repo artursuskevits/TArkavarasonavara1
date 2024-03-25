@@ -1,163 +1,13 @@
 <!DOCTYPE html>
 <html lang="et">
 <head>
+    <script src="Script.js"></script>
     <meta charset="UTF-8">
     <title>Tarkvara sõnad</title>
-    <style>
-        /* Põhjastiilid */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-            color: #333;
-        }
-        /* Pealkiri stiil */
-        h1 {
-            text-align: center;
-            margin-top: 20px;
-        }
-        /* Tabeli stiil */
-        table {
-            margin: 0 auto;
-            border-collapse: collapse;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        /* Inputi ja nende sisu stiil */
-        input[type="text"], input[type="button"] {
-            padding: 8px;
-            margin: 5px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            font-size: 16px;
-        }
-        /* Nupu stiil */
-        input[type="button"] {
-            cursor: pointer;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-        }
-        /* Divi stiil */
-        div {
-            padding: 10px;
-        }
-        /* Vastuse stiil */
-        #vastus2, #vastusru {
-            font-weight: bold;
-            margin-top: 5px;
-        }
-    </style>
-    <script>
-        // eesti list
-        const sonad = [
-            'teostus', // Sõnad eesti keeles
-            'algorütm',
-            'kavand',
-            'kasutajaliides',
-            'mudel',
-            'andmebaasi skeem',
-            'standart',
-            'tsükkel',
-            'andmetöötlus',
-            'andmestruktuur',
-            'arenduskeskkond',
-            'projektihaldus tööriist',
-            'kavandamine',
-            'iteratsioon',
-            'parandus',
-            'koskmudel',
-            'agiilne mudel',
-            'spiiralne mudul',
-            'inkrementaalne mudel',
-            'nõudmised',
-            'reliseerimine',
-            'testimine',
-            'integreerimine',
-            'kasutamine',
-            'eelised',
-            'puudused',
-            'elutsükkel',
-            'arendamine',
-            'validerimine'
-        ];
-
-        // vene list
-        const venesonad = [
-            'реализация', // Sõnad vene keeles
-            'алгоритм',
-            'план',
-            'пользовательский интерфейс',
-            'модель',
-            'схема базы данных',
-            'стандарт',
-            'цикл',
-            'обработка данных',
-            'структура данных',
-            'среда разработки',
-            'инструмент управления проектами',
-            'планирование',
-            'итерация',
-            'исправление',
-            'каскмодель',
-            'гибкая модель',
-            'пространственная модель',
-            'Инкрементальная модель',
-            'требования',
-            'переселение',
-            'тестирование',
-            'интеграция',
-            'использование',
-            'выгоды',
-            'недостатки',
-            'Циклжизни',
-            'разработка',
-            'подтверждение'
-        ];
-
-        // Funktsioonid eesti keele sõnade genereerimiseks ja kontrollimiseks
-        function randomSonad() {
-            const juhuslikSona = Math.floor(Math.random() * sonad.length);
-            const sona = sonad[juhuslikSona];
-            document.getElementById("random-sona").innerHTML = sona;
-        }
-
-        function randomSonadru() {
-            const juhuslikSona = Math.floor(Math.random() * venesonad.length);
-            const sona = venesonad[juhuslikSona];
-            document.getElementById("random-vene-sona").innerHTML = sona;
-        }
-
-        // Funktsioonid vastuste kontrollimiseks
-        function kontrollima() {
-            const sona = document.getElementById("random-sona").innerText;
-            const venesona = document.getElementById("kontroll").value;
-            const indEesti = sonad.indexOf(sona);
-            const indVene = venesonad.indexOf(venesona);
-            if (indEesti === indVene && indEesti !== -1 && indVene !== -1) {
-                document.getElementById("vastus2").innerHTML = "Õige vastus!";
-            } else {
-                document.getElementById("vastus2").innerHTML = "Vale vastus(((";
-            }
-        }
-
-        function kontrollimaru() {
-            const sona = document.getElementById("random-vene-sona").innerText;
-            const eestisona = document.getElementById("kontrollru").value;
-            const indEesti = sonad.indexOf(eestisona);
-            const indVene = venesonad.indexOf(sona);
-            if (indEesti === indVene && indEesti !== -1 && indVene !== -1) {
-                document.getElementById("vastusru").innerHTML = "Õige vastus!";
-            } else {
-                document.getElementById("vastusru").innerHTML = "Vale vastus(((";
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Tarkvara sõnad</h1>
+<h1>Tarkvara sõnavara</h1>
 <table>
     <tr>
         <td>
@@ -172,7 +22,7 @@
     </tr>
     <tr>
         <td>
-            <input type="button" value="RusRandom" onclick="randomSonadru()">
+            <input type="button" value="Rusian Random" onclick="randomSonadru()">
             <div id="random-vene-sona"></div>
             <label for="kontrollru">Kirjuta sõna eestieeles</label>
         </td>
