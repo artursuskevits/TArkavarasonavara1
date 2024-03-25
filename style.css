@@ -1,0 +1,46 @@
+
+    /* Põhjastiilid */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+/* Pealkiri stiil */
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+/* Tabeli stiil */
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+/* Inputi ja nende sisu stiil */
+input[type="text"], input[type="button"] {
+    padding: 8px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+}
+/* Nupu stiil */
+input[type="button"] {
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+}
+/* Divi stiil */
+div {
+    padding: 10px;
+}
+/* Vastuse stiil */
+#vastus2, #vastusru {
+    font-weight: bold;
+    margin-top: 5px;
+}
