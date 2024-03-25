@@ -1,0 +1,109 @@
+<script>
+    const sonad=[
+        'teostus',
+        'algorütm',
+        'kavand',
+        'kasutajaliides',
+        'mudel',
+        'andmebaasi skeem',
+        'standart',
+        'tsükkel',
+        'andmetöötlus',
+        'andmestruktuur',
+        'arenduskeskkond',
+        'projektihaldus tööriist',
+        'kavandamine',
+        'iteratsioon',
+        'parandus',
+        'koskmudel',
+        'agiilne mudel',
+        'spiiralne mudel',
+        'inkrementaalne mudel',
+        'nõudmised',
+        'reliseerimine',
+        'testimine',
+        'integreerimine',
+        'kasutamine',
+        'eelised',
+        'puudused',
+        'elutsükkel',
+        'arendamine',
+        'validerimine'
+    ];
+    const venesonad=[
+        'реализация',
+        'алгоритм',
+        'план',
+        'пользовательский интерфейс',
+        'модель',
+        'схема базы данных',
+        'стандарт',
+        'цикл',
+        'обработка данных',
+        'структура данных',
+        'среда разработки',
+        'инструмент управления проектами',
+        'планирование',
+        'итерация',
+        'исправление',
+        'каскмодель',
+        'гибкая модель',
+        'пространственная модель',
+        'Инкрементальная модель',
+        'требования',
+        'переселение',
+        'тестирование',
+        'интеграция',
+        'использование',
+        'выгоды',
+        'недостатки',
+        'Циклжизни',
+        'разработка',
+        'подтверждение'
+
+
+    ];
+    function randomSonad(){
+
+        //random sõnad - arv
+        const juhuslikSona = Math.floor(Math.random()*sonad.length);
+
+        //võtme random sõna massivist
+        const sona = sonad[juhuslikSona];
+
+        //lisame HTML lehele
+
+        document.getElementById("random-sona").innerHTML=sona;
+    }
+
+    function kontrollima() {
+        const sona = document.getElementById("random-sona").innerText;
+        const venesona = document.getElementById("kontroll").value;
+
+        const indEesti = sonad.indexOf(sona);
+        const indVene = venesonad.indexOf(venesona);
+
+        if (indEesti === indVene && indEesti !== -1 && indVene !== -1) {
+            document.getElementById("vastus").innerHTML = "Õige vastus!";
+        } else {
+            document.getElementById("vastus").innerHTML = "Vale vastus(((";
+        }
+    }
+</script>
+
+<!DOCTYPE html>
+<html lang="et">
+<head>
+        <meta charset="UTF-8">
+        <title>Tarkvara sõnad</title>
+        <script src="tarkvaraScript.js"></script>
+</head>
+<body>
+    <h1>Tarkvara sõnad</h1>
+    <input type="button" value="Random" onclick="randomSonad()">
+    <div id="random-sona"></div>
+    <label for="kontroll">Kirjuta sõna venekeeles</label>
+    <input type="text" id="kontroll" onchange="kontrollima()">
+    <div id="vastus"></div>
+</body>
+</html>
