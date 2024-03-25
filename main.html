@@ -1,131 +1,141 @@
-<script>
-    //eesti list
-    const sonad=[
-        'teostus',
-        'algorütm',
-        'kavand',
-        'kasutajaliides',
-        'mudel',
-        'andmebaasi skeem',
-        'standart',
-        'tsükkel',
-        'andmetöötlus',
-        'andmestruktuur',
-        'arenduskeskkond',
-        'projektihaldus tööriist',
-        'kavandamine',
-        'iteratsioon',
-        'parandus',
-        'koskmudel',
-        'agiilne mudel',
-        'spiiralne mudul',
-        'inkrementaalne mudel',
-        'nõudmised',
-        'reliseerimine',
-        'testimine',
-        'integreerimine',
-        'kasutamine',
-        'eelised',
-        'puudused',
-        'elutsükkel',
-        'arendamine',
-        'validerimine'
-    ];
-    //vene list
-    const venesonad=[
-        'реализация',
-        'алгоритм',
-        'план',
-        'пользовательский интерфейс',
-        'модель',
-        'схема базы данных',
-        'стандарт',
-        'цикл',
-        'обработка данных',
-        'структура данных',
-        'среда разработки',
-        'инструмент управления проектами',
-        'планирование',
-        'итерация',
-        'исправление',
-        'каскмодель',
-        'гибкая модель',
-        'пространственная модель',
-        'Инкрементальная модель',
-        'требования',
-        'переселение',
-        'тестирование',
-        'интеграция',
-        'использование',
-        'выгоды',
-        'недостатки',
-        'Циклжизни',
-        'разработка',
-        'подтверждение'
-
-
-    ];
-    function randomSonad(){
-
-        //random sõnad - arv
-        const juhuslikSona = Math.floor(Math.random()*sonad.length);
-
-        //võtme random sõna massivist
-        const sona = sonad[juhuslikSona];
-
-        //lisame HTML lehele
-
-        document.getElementById("random-sona").innerHTML=sona;
-    }
-
-    function kontrollima() {
-        const sona = document.getElementById("random-sona").innerText;
-        const venesona = document.getElementById("kontroll").value;
-
-        const indEesti = sonad.indexOf(sona);
-        const indVene = venesonad.indexOf(venesona);
-
-        if (indEesti === indVene && indEesti !== -1 && indVene !== -1) {
-            document.getElementById("vastus").innerHTML = "Õige vastus!";
-        } else {
-            document.getElementById("vastus").innerHTML = "Vale vastus(((";
-        }
-    }
-</script>
-
 <!DOCTYPE html>
 <html lang="et">
 <head>
-        <meta charset="UTF-8">
-        <title>Tarkvara sõnad</title>
-        <script src="tarkvaraScript.js"></script>
+    <meta charset="UTF-8">
+    <title>Tarkvara sõnad</title>
+    <script>
+        // eesti list
+        const sonad = [
+            'teostus',
+            'algorütm',
+            'kavand',
+            'kasutajaliides',
+            'mudel',
+            'andmebaasi skeem',
+            'standart',
+            'tsükkel',
+            'andmetöötlus',
+            'andmestruktuur',
+            'arenduskeskkond',
+            'projektihaldus tööriist',
+            'kavandamine',
+            'iteratsioon',
+            'parandus',
+            'koskmudel',
+            'agiilne mudel',
+            'spiiralne mudul',
+            'inkrementaalne mudel',
+            'nõudmised',
+            'reliseerimine',
+            'testimine',
+            'integreerimine',
+            'kasutamine',
+            'eelised',
+            'puudused',
+            'elutsükkel',
+            'arendamine',
+            'validerimine'
+        ];
+
+        // vene list
+        const venesonad = [
+            'реализация',
+            'алгоритм',
+            'план',
+            'пользовательский интерфейс',
+            'модель',
+            'схема базы данных',
+            'стандарт',
+            'цикл',
+            'обработка данных',
+            'структура данных',
+            'среда разработки',
+            'инструмент управления проектами',
+            'планирование',
+            'итерация',
+            'исправление',
+            'каскмодель',
+            'гибкая модель',
+            'пространственная модель',
+            'Инкрементальная модель',
+            'требования',
+            'переселение',
+            'тестирование',
+            'интеграция',
+            'использование',
+            'выгоды',
+            'недостатки',
+            'Циклжизни',
+            'разработка',
+            'подтверждение'
+        ];
+
+        function randomSonad() {
+            // random sõnad - arv
+            const juhuslikSona = Math.floor(Math.random() * sonad.length);
+            // võtme random sõna massivist
+            const sona = sonad[juhuslikSona];
+            // lisame HTML lehele
+            document.getElementById("random-sona").innerHTML = sona;
+        }
+
+        function randomSonadru() {
+            // random sõnad - arv
+            const juhuslikSona = Math.floor(Math.random() * venesonad.length);
+            // võtme random sõna massivist
+            const sona = venesonad[juhuslikSona];
+            // lisame HTML lehele
+            document.getElementById("random-vene-sona").innerHTML = sona;
+        }
+
+        function kontrollima() {
+            const sona = document.getElementById("random-sona").innerText;
+            const venesona = document.getElementById("kontroll").value;
+            const indEesti = sonad.indexOf(sona);
+            const indVene = venesonad.indexOf(venesona);
+            if (indEesti === indVene && indEesti !== -1 && indVene !== -1) {
+                document.getElementById("vastus2").innerHTML = "Õige vastus!";
+            } else {
+                document.getElementById("vastus2").innerHTML = "Vale vastus(((";
+            }
+        }
+
+        function kontrollimaru() {
+            const sona = document.getElementById("random-vene-sona").innerText;
+            const eestisona = document.getElementById("kontrollru").value;
+            const indEesti = sonad.indexOf(eestisona);
+            const indVene = venesonad.indexOf(sona);
+            if (indEesti === indVene && indEesti !== -1 && indVene !== -1) {
+                document.getElementById("vastusru").innerHTML = "Õige vastus!";
+            } else {
+                document.getElementById("vastusru").innerHTML = "Vale vastus(((";
+            }
+        }
+    </script>
 </head>
 <body>
-    <h1>Tarkvara sõnad</h1>
-    <input type="button" value="Random" onclick="randomSonad()">
-    <div id="random-sona2"></div>
-    <label for="kontroll">Kirjuta sõna venekeeles</label>
-    <input type="text" id="kontroll2" onchange="kontrollima()">
-    <div id="vastus"></div>
-<h2>Tabel: </h2>
+<h1>Tarkvara sõnad</h1>
 <table>
     <tr>
         <td>
             <input type="button" value="Random" onclick="randomSonad()">
-                <div id="random-sona"></div>
-                <label for="kontroll">Kirjuta sõna venekeeles</label>
+            <div id="random-sona"></div>
+            <label for="kontroll">Kirjuta sõna venekeeles</label>
         </td>
         <td>
             <input type="text" id="kontroll" onchange="kontrollima()">
-                <div id="vastus2"></div>
+            <div id="vastus2"></div>
         </td>
     </tr>
     <tr>
         <td>
-
+            <input type="button" value="RusRandom" onclick="randomSonadru()">
+            <div id="random-vene-sona"></div>
+            <label for="kontrollru">Kirjuta sõna eestieeles</label>
         </td>
         <td>
-
+            <input type="text" id="kontrollru" onchange="kontrollimaru()">
+            <div id="vastusru"></div>
         </td>
     </tr>
 </table>
