@@ -6,7 +6,7 @@
     <script>
         // eesti list
         const sonad = [
-            'teostus',
+            'teostus', // Sõnad eesti keeles
             'algorütm',
             'kavand',
             'kasutajaliides',
@@ -39,7 +39,7 @@
 
         // vene list
         const venesonad = [
-            'реализация',
+            'реализация', // Sõnad vene keeles
             'алгоритм',
             'план',
             'пользовательский интерфейс',
@@ -70,24 +70,20 @@
             'подтверждение'
         ];
 
+        // Funktsioonid eesti keele sõnade genereerimiseks ja kontrollimiseks
         function randomSonad() {
-            // random sõnad - arv
             const juhuslikSona = Math.floor(Math.random() * sonad.length);
-            // võtme random sõna massivist
             const sona = sonad[juhuslikSona];
-            // lisame HTML lehele
             document.getElementById("random-sona").innerHTML = sona;
         }
 
         function randomSonadru() {
-            // random sõnad - arv
             const juhuslikSona = Math.floor(Math.random() * venesonad.length);
-            // võtme random sõna massivist
             const sona = venesonad[juhuslikSona];
-            // lisame HTML lehele
             document.getElementById("random-vene-sona").innerHTML = sona;
         }
 
+        // Funktsioonid vastuste kontrollimiseks
         function kontrollima() {
             const sona = document.getElementById("random-sona").innerText;
             const venesona = document.getElementById("kontroll").value;
